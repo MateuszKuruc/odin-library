@@ -7,7 +7,9 @@
 header {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   background-color: bisque;
+  height: 8vh;
 }
 
 #login {
@@ -43,46 +45,75 @@ form {
   height: 80%;
   align-self: center;
   justify-content: space-around;
-  border: 1px solid blue;
 }
 
 input {
-    width: 80%;
-    align-self: center;
-}
-
-label {
-    align-self: center;
+  width: 80%;
 }
 
 select {
-    width: 50%;
-    align-self: center;
+  width: 50%;
 }
 
-#addBook {
-    width: 70%;
-    height: 3rem;
-    align-self: center;
+label {
+  font-size: 18px;
+}
+
+input,
+select {
+  border-radius: 8px;
+}
+
+input,
+label,
+select {
+  align-self: center;
+}
+
+#submitBook {
+  width: 80%;
+  height: 3rem;
+  align-self: center;
+  border-radius: 10px;
+  font-size: 18px;
 }
 
 .form-block {
-    position: absolute;
+  position: absolute;
   display: flex;
   justify-content: center;
-  border: 1px solid red;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
   height: 500px;
-  background-color:bisque;
+  background-color: bisque;
+  border-radius: 15px;
 }
 
-.main {
-    /* position: relative; */
+form > h2 {
+  align-self: center;
 }
 
 .form-block.hidden {
-    display: none;
+  display: none;
+}
+
+.addBook {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addBookBtn {
+  width: 200px;
+  height: 75px;
+  border-radius: 15px;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.main {
+  margin-left: 16px;
 }

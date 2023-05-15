@@ -13,7 +13,9 @@
       <button id="login">Log in</button>
     </header>
     <section class="main">
-      <button class="addBook">+ Add book</button>
+      <div class="addBook">
+        <button class="addBookBtn">+ Add book</button>
+    </div>
       <div id="bookList">
         <div class="bookCard">
           <h3 class="title">It</h3>
@@ -25,7 +27,7 @@
       </div>
       <div class="form-block">
         <form action="" method="get">
-          <h2>Add book</h2>
+          <h2>Add new book</h2>
           <label for="title">Title</label>
           <input id="title" type="text" name="title" required />
           <label for="author">Author</label>
@@ -37,7 +39,7 @@
             <option value="yes">Yes</option>
             <option value="no">No</option>
           </select>
-          <button id="addBook">Add book</button>
+          <button id="submitBook">Add book</button>
         </form>
       </div>
     </section>
