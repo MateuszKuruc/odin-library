@@ -1,42 +1,49 @@
 "use strict";
 
-// const bookList = document.getElementById('bookList');
-
-// const bookElement = document.createElement('div');
-// const title = document.createElement('h3');
-// const author = document.createElement('h3');
-// const pages = document.createElement('h3');
-// const bookCard = document.querySelector('.bookCard');
-const submitBook = document.querySelector('#submitBook');
-submitBook.addEventListener('click', function(event) {
-    event.preventDefault();
-alert('sadsad');
-titleData = document.querySelector('#title').value;
-authorData = document.querySelector('#author').value;
-pagesData = document.querySelector('#pages').value;
-readData = document.querySelector('#read').value;
-singleBook = new Book(titleData, authorData, pagesData, readData);
-myLibrary.push(singleBook);
-displayBook();
-myLibrary = [];
-});
-
+const formBlock = document.querySelector(".form-block");
+const addBookBtn = document.querySelector(".addBookBtn");
+const submitBook = document.querySelector("#submitBook");
 let titleData;
 let authorData;
 let pagesData;
 let readData;
 let newBook = [];
 let singleBook;
-
-
-// const book1 = new Book("Dumb", "Dumbinho", 237, "Read");
-// const book2 = new Book("Fuckity", "Fuck", 450, "Not read yet");
-// const book3 = new Book('Shitty', 'Big Shit', 666, 'Read');
-// const book4 = new Book('Retarded', 'Sir Retard Retardson', 123, 'Not read yet');
-// const book5 = new Book('Pameliada', "Penelopa Kokot", 333, 'Not read yet');
-// console.log(book1.info());
-
 let myLibrary = [];
+
+// open the form
+
+addBookBtn.addEventListener("click", function () {
+  document.querySelector("#myForm").reset();
+  formBlock.classList.remove("hidden");
+});
+
+// hide the form when user clicks outside it
+
+document.addEventListener('click', function clickOutside(event) {
+    if (!formBlock.contains(event.target) && !addBookBtn.contains(event.target)) {
+        formBlock.classList.add('hidden');
+        document.querySelector("#myForm").reset();
+    }
+});
+
+
+submitBook.addEventListener("click", function addToLibrary(event) {
+  event.preventDefault();
+
+  titleData = document.querySelector("#title").value;
+  authorData = document.querySelector("#author").value;
+  pagesData = document.querySelector("#pages").value;
+  readData = document.querySelector("#read").value;
+  singleBook = new Book(titleData, authorData, pagesData, readData);
+  myLibrary.push(singleBook);
+  displayBook();
+//   myLibrary = [];
+  formBlock.classList.add("hidden");
+  document.querySelector("#myForm").reset();
+});
+
+// object constructor
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -45,41 +52,31 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-// function addBookToLibrary(newBook) {
-
-//     myLibrary.push(newBook);
-// };
-
-// addBookToLibrary(book1);
-// addBookToLibrary(book2);
-// addBookToLibrary(book3);
-// addBookToLibrary(book4);
-// addBookToLibrary(book5);
-
-
 function displayBook() {
-for (let i = 0; i < myLibrary.length; i++) {
+  for (let i = 0; i < myLibrary.length; i++) {
     let newBook = myLibrary[i];
-const bookElement = document.createElement('div');
-const title = document.createElement('h3');
-const author = document.createElement('h3');
-const pages = document.createElement('h3');
-const readButton = document.createElement('button');
-const deleteButton = document.createElement('button');
-bookElement.classList.add('bookCard');
-title.innerHTML = '"' + newBook.title + '"';
-author.innerHTML = newBook.author;
-pages.innerHTML = newBook.pages;
-readButton.innerHTML = newBook.read;
-deleteButton.innerHTML = 'Remove book'
-bookList.appendChild(bookElement);
-bookElement.appendChild(title);
-bookElement.appendChild(author);
-bookElement.appendChild(pages);
-bookElement.appendChild(readButton);
-bookElement.appendChild(deleteButton)
+    const bookElement = document.createElement("div");
+    const title = document.createElement("h3");
+    const author = document.createElement("h3");
+    const pages = document.createElement("h3");
+    const readButton = document.createElement("button");
+    const deleteButton = document.createElement("button");
+    bookElement.classList.add("bookCard");
+    // bookElement.setAttribute('data-id', `${i}`);
+    title.innerHTML = '"' + newBook.title + '"';
+    author.innerHTML = newBook.author;
+    pages.innerHTML = newBook.pages;
+    if (newBook.read === "yes") {
+      readButton.innerHTML = "Already read";
+    } else if (newBook.read === "no") {
+      readButton.innerHTML = "Not read yet";
+    }
+    deleteButton.innerHTML = "Remove book";
+    bookList.appendChild(bookElement);
+    bookElement.appendChild(title);
+    bookElement.appendChild(author);
+    bookElement.appendChild(pages);
+    bookElement.appendChild(readButton);
+    bookElement.appendChild(deleteButton);
+  }
 }
-};
-
-
-// displayBook();
