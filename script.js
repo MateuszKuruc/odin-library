@@ -13,6 +13,7 @@ const book1 = new Book("Dumb", "Dumbinho", 237, "Read");
 const book2 = new Book("Fuckity", "Fuck", 450, "Not read yet");
 const book3 = new Book('Shitty', 'Big Shit', 666, 'Read');
 const book4 = new Book('Retarded', 'Sir Retard Retardson', 123, 'Not read yet');
+const book5 = new Book('Pameliada', "Penelopa Kokot", 333, 'Not read yet');
 // console.log(book1.info());
 
 let myLibrary = [];
@@ -32,6 +33,7 @@ addBookToLibrary(book1);
 addBookToLibrary(book2);
 addBookToLibrary(book3);
 addBookToLibrary(book4);
+addBookToLibrary(book5);
 
 
 function displayBook() {

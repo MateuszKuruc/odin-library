@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Library</h1>
-        <button id="login">Log in</button>
+      <h1>Library</h1>
+      <button id="login">Log in</button>
     </header>
     <section class="main">
-        <button class="addBook">+ Add book</button>
-        <div id="bookList">
+      <button class="addBook">+ Add book</button>
+      <div id="bookList">
         <div class="bookCard">
-            <h3 class="title">It</h3>
-            <h3 class="author">Stephen King</h3>
-            <h3 class="pages">1104</h3>
-            <button class="read">Read</button>
-            <button class="delete">Delete</button>
+          <h3 class="title">It</h3>
+          <h3 class="author">Stephen King</h3>
+          <h3 class="pages">1104</h3>
+          <button class="read">Read</button>
+          <button class="delete">Delete</button>
         </div>
-    </div>
+      </div>
+      <div class="form-block">
+        <form action="" method="get">
+          <h2>Add book</h2>
+          <label for="title">Title</label>
+          <input id="title" type="text" name="title" required />
+          <label for="author">Author</label>
+          <input id="author" type="text" name="author" required />
+          <label for="pages">Pages</label>
+          <input id="pages" type="text" name="pages" required />
+          <label for="read">Have you read the book yet?</label>
+          <select name="read" id="read" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+          <button id="addBook">Add book</button>
+        </form>
+      </div>
     </section>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
