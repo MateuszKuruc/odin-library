@@ -20,13 +20,12 @@ addBookBtn.addEventListener("click", function () {
 
 // hide the form when user clicks outside it
 
-document.addEventListener('click', function clickOutside(event) {
-    if (!formBlock.contains(event.target) && !addBookBtn.contains(event.target)) {
-        formBlock.classList.add('hidden');
-        document.querySelector("#myForm").reset();
-    }
+document.addEventListener("click", function clickOutside(event) {
+  if (!formBlock.contains(event.target) && !addBookBtn.contains(event.target)) {
+    formBlock.classList.add("hidden");
+    document.querySelector("#myForm").reset();
+  }
 });
-
 
 submitBook.addEventListener("click", function addToLibrary(event) {
   event.preventDefault();
@@ -37,7 +36,7 @@ submitBook.addEventListener("click", function addToLibrary(event) {
   singleBook = new Book(titleData, authorData, pagesData, readData);
   myLibrary.push(singleBook);
   displayBook();
-//   myLibrary = [];
+  //   myLibrary = [];
   formBlock.classList.add("hidden");
   document.querySelector("#myForm").reset();
 });
@@ -52,7 +51,7 @@ function Book(title, author, pages, read) {
 }
 
 function displayBook() {
-  for (let i = (myLibrary.length - 1); i < myLibrary.length; i++) {
+  for (let i = myLibrary.length - 1; i < myLibrary.length; i++) {
     let newBook = myLibrary[i];
     const bookElement = document.createElement("div");
     const title = document.createElement("h3");
@@ -61,13 +60,16 @@ function displayBook() {
     const readButton = document.createElement("button");
     const deleteButton = document.createElement("button");
     bookElement.classList.add("bookCard");
+    readButton.classList.add("readStyle");
     title.innerHTML = '"' + newBook.title + '"';
     author.innerHTML = newBook.author;
     pages.innerHTML = newBook.pages;
     if (newBook.read === "yes") {
       readButton.innerHTML = "Already read";
+      readButton.classList.add("read");
     } else if (newBook.read === "no") {
       readButton.innerHTML = "Not read yet";
+      //   readButton.classList.add('unread')
     }
     deleteButton.innerHTML = "Remove book";
     bookList.appendChild(bookElement);
@@ -76,9 +78,17 @@ function displayBook() {
     bookElement.appendChild(pages);
     bookElement.appendChild(readButton);
     bookElement.appendChild(deleteButton);
-    deleteButton.addEventListener('click', function () {
-        bookElement.style.display = 'none';
-        delete myLibrary[i];
-    })
+    deleteButton.addEventListener("click", () => {
+      bookElement.style.display = "none";
+      delete myLibrary[i];
+    });
+    readButton.addEventListener("click", () => {
+      if (readButton.innerHTML === "Already read") {
+        readButton.innerHTML = "Not read yet";
+      } else if (readButton.innerHTML === "Not read yet") {
+        readButton.innerHTML = "Already read";
+      }
+      readButton.classList.toggle("read");
+    });
   }
 }

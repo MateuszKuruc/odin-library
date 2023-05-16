@@ -13,10 +13,12 @@ header {
 }
 
 #login {
-  width: 75px;
+  width: 100px;
   height: 40px;
   align-self: center;
   border-radius: 10px;
+  font-size: 14px;
+  font-weight: 900;
 }
 
 .bookCard {
@@ -26,6 +28,7 @@ header {
   height: 200px;
   border: 1px solid black;
   gap: 0.25rem;
+  border-radius: 15px;
 }
 
 .bookCard > h3 {
@@ -117,3 +120,17 @@ form > h2 {
 .main {
   margin-left: 16px;
 }
+
+
+
+/* .unread {
+    background-color: salmon
+} */
+
+.readStyle {
+    background-color: salmon;
+}
+
+.read {
+    background-color: greenyellow
+    }
