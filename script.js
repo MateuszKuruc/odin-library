@@ -3,6 +3,9 @@
 const formBlock = document.querySelector(".form-block");
 const addBookBtn = document.querySelector(".addBookBtn");
 const submitBook = document.querySelector("#submitBook");
+const titleError = document.querySelector("#titleError");
+const authorError = document.querySelector("#authorError");
+const pagesError = document.querySelector("#pagesError");
 let titleData;
 let authorData;
 let pagesData;
@@ -10,9 +13,6 @@ let readData;
 let newBook = [];
 let singleBook;
 let myLibrary = [];
-const titleError = document.querySelector("#titleError");
-const authorError = document.querySelector("#authorError");
-const pagesError = document.querySelector("#pagesError");
 
 // open the form
 
@@ -27,8 +27,13 @@ document.addEventListener("click", function clickOutside(event) {
   if (!formBlock.contains(event.target) && !addBookBtn.contains(event.target)) {
     formBlock.classList.add("hidden");
     document.querySelector("#myForm").reset();
+    titleError.classList.add("hidden");
+    authorError.classList.add("hidden");
+    pagesError.classList.add("hidden");
   }
 });
+
+// control user input and send it to object constructor
 
 submitBook.addEventListener("click", function addToLibrary(event) {
   event.preventDefault();
@@ -58,11 +63,6 @@ submitBook.addEventListener("click", function addToLibrary(event) {
   }
 });
 
-const book1 = new Book("aaa", "bbb", 111, "no");
-
-myLibrary.push(book1);
-
-displayBook();
 // object constructor
 
 function Book(title, author, pages, read) {
@@ -71,6 +71,8 @@ function Book(title, author, pages, read) {
   this.pages = pages;
   this.read = read;
 }
+
+// take objects from library and display on the page
 
 function displayBook() {
   for (let i = myLibrary.length - 1; i < myLibrary.length; i++) {

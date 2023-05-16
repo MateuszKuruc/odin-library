@@ -8,38 +8,44 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <h1>Library</h1>
-      <button id="login">Log in</button>
-    </header>
-    <section class="main">
-      <div class="addBook">
-        <button class="addBookBtn">+ Add book</button>
-    </div>
-      <div id="bookList">
+    <div class="container">
+        <header>
+          <h1>Library</h1>
+          <button id="login">Log in</button>
+        </header>
+        <section class="main">
+          <div class="addBook">
+            <button class="addBookBtn">+ Add book</button>
+        </div>
+          <div id="bookList">
         
-      </div>
-      <div class="form-block hidden">
-        <form id="myForm" action="">
-          <h2>Add new book</h2>
-          <label for="title">Title</label>
-          <input id="title" type="text" name="title" required />
-          <p class="hidden" id="titleError">*Title is required</p>
-          <label for="author">Author</label>
-          <input id="author" type="text" name="author" required />
-          <p class="hidden" id="authorError">*Author name is required</p>
-          <label for="pages">Pages</label>
-          <input id="pages" type="text" name="pages" required />
-          <p class="hidden" id="pagesError">*Please enter number of pages</p>
-          <label for="read">Have you read the book yet?</label>
-          <select name="read" id="read" required>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-          <button id="submitBook">Add book</button>
-        </form>
-      </div>
-    </section>
+          </div>
+          <div class="form-block hidden">
+            <form id="myForm" action="">
+              <h2>Add new book</h2>
+              <label for="title">Title</label>
+              <input id="title" type="text" name="title" required />
+              <p class="hidden" id="titleError">*Title is required</p>
+              <label for="author">Author</label>
+              <input id="author" type="text" name="author" required />
+              <p class="hidden" id="authorError">*Author name is required</p>
+              <label for="pages">Pages</label>
+              <input id="pages" type="text" name="pages" required />
+              <p class="hidden" id="pagesError">*Please enter number of pages</p>
+              <label for="read">Have you read the book yet?</label>
+              <select name="read" id="read" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+              <button id="submitBook">Add book</button>
+            </form>
+          </div>
+        </section>
+        <footer>
+            <h3>Mateusz Kuruc © 2023</h3>
+            <a target="_blank" href="https://github.com/MateuszKuruc?tab=repositories"><img src="img/iconmonstr-github-1.svg" alt="Github icon"></a>
+        </footer>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
