@@ -10,6 +10,9 @@ let readData;
 let newBook = [];
 let singleBook;
 let myLibrary = [];
+const titleError = document.querySelector("#titleError");
+const authorError = document.querySelector("#authorError");
+const pagesError = document.querySelector("#pagesError");
 
 // open the form
 
@@ -29,16 +32,30 @@ document.addEventListener("click", function clickOutside(event) {
 
 submitBook.addEventListener("click", function addToLibrary(event) {
   event.preventDefault();
+
   titleData = document.querySelector("#title").value;
   authorData = document.querySelector("#author").value;
   pagesData = document.querySelector("#pages").value;
   readData = document.querySelector("#read").value;
   singleBook = new Book(titleData, authorData, pagesData, readData);
-  myLibrary.push(singleBook);
-  displayBook();
-  //   myLibrary = [];
-  formBlock.classList.add("hidden");
-  document.querySelector("#myForm").reset();
+  if (singleBook.title === "") {
+    titleError.classList.remove("hidden");
+  }
+  if (singleBook.author === "") {
+    authorError.classList.remove("hidden");
+  }
+  if (singleBook.pages === "" || isNaN(singleBook.pages)) {
+    pagesError.classList.remove("hidden");
+    return;
+  } else {
+    myLibrary.push(singleBook);
+    displayBook();
+    formBlock.classList.add("hidden");
+    document.querySelector("#myForm").reset();
+    titleError.classList.add("hidden");
+    authorError.classList.add("hidden");
+    pagesError.classList.add("hidden");
+  }
 });
 
 // object constructor
@@ -69,7 +86,6 @@ function displayBook() {
       readButton.classList.add("read");
     } else if (newBook.read === "no") {
       readButton.innerHTML = "Not read yet";
-      //   readButton.classList.add('unread')
     }
     deleteButton.innerHTML = "Remove book";
     bookList.appendChild(bookElement);

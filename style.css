@@ -98,6 +98,12 @@ form > h2 {
   align-self: center;
 }
 
+form > p {
+    align-self: center;
+    color: red;
+    /* display: none; */
+}
+
 .form-block.hidden {
   display: none;
 }
@@ -121,12 +127,6 @@ form > h2 {
   margin-left: 16px;
 }
 
-
-
-/* .unread {
-    background-color: salmon
-} */
-
 .readStyle {
     background-color: salmon;
 }
@@ -134,3 +134,7 @@ form > h2 {
 .read {
     background-color: greenyellow
     }
+
+.hidden {
+    display: none;
+}

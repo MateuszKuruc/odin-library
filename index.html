@@ -17,23 +17,20 @@
         <button class="addBookBtn">+ Add book</button>
     </div>
       <div id="bookList">
-        <div class="bookCard">
-          <h3 class="title">It</h3>
-          <h3 class="author">Stephen King</h3>
-          <h3 class="pages">1104</h3>
-          <button class="read">Read</button>
-          <button class="delete">Remove book</button>
-        </div>
+        
       </div>
       <div class="form-block hidden">
         <form id="myForm" action="">
           <h2>Add new book</h2>
           <label for="title">Title</label>
           <input id="title" type="text" name="title" required />
+          <p class="hidden" id="titleError">*Title is required</p>
           <label for="author">Author</label>
           <input id="author" type="text" name="author" required />
+          <p class="hidden" id="authorError">*Author name is required</p>
           <label for="pages">Pages</label>
           <input id="pages" type="text" name="pages" required />
+          <p class="hidden" id="pagesError">*Please enter number of pages</p>
           <label for="read">Have you read the book yet?</label>
           <select name="read" id="read" required>
             <option value="yes">Yes</option>
