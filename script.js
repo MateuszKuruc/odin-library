@@ -30,7 +30,6 @@ document.addEventListener('click', function clickOutside(event) {
 
 submitBook.addEventListener("click", function addToLibrary(event) {
   event.preventDefault();
-
   titleData = document.querySelector("#title").value;
   authorData = document.querySelector("#author").value;
   pagesData = document.querySelector("#pages").value;
@@ -53,7 +52,7 @@ function Book(title, author, pages, read) {
 }
 
 function displayBook() {
-  for (let i = 0; i < myLibrary.length; i++) {
+  for (let i = (myLibrary.length - 1); i < myLibrary.length; i++) {
     let newBook = myLibrary[i];
     const bookElement = document.createElement("div");
     const title = document.createElement("h3");
@@ -62,7 +61,6 @@ function displayBook() {
     const readButton = document.createElement("button");
     const deleteButton = document.createElement("button");
     bookElement.classList.add("bookCard");
-    // bookElement.setAttribute('data-id', `${i}`);
     title.innerHTML = '"' + newBook.title + '"';
     author.innerHTML = newBook.author;
     pages.innerHTML = newBook.pages;
@@ -78,5 +76,9 @@ function displayBook() {
     bookElement.appendChild(pages);
     bookElement.appendChild(readButton);
     bookElement.appendChild(deleteButton);
+    deleteButton.addEventListener('click', function () {
+        bookElement.style.display = 'none';
+        delete myLibrary[i];
+    })
   }
 }
