@@ -58,6 +58,11 @@ submitBook.addEventListener("click", function addToLibrary(event) {
   }
 });
 
+const book1 = new Book("aaa", "bbb", 111, "no");
+
+myLibrary.push(book1);
+
+displayBook();
 // object constructor
 
 function Book(title, author, pages, read) {
@@ -78,9 +83,10 @@ function displayBook() {
     const deleteButton = document.createElement("button");
     bookElement.classList.add("bookCard");
     readButton.classList.add("readStyle");
+    deleteButton.classList.add("delStyle");
     title.innerHTML = '"' + newBook.title + '"';
     author.innerHTML = newBook.author;
-    pages.innerHTML = newBook.pages;
+    pages.innerHTML = newBook.pages + " " + "pages";
     if (newBook.read === "yes") {
       readButton.innerHTML = "Already read";
       readButton.classList.add("read");
