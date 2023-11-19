@@ -35,6 +35,12 @@ footer {
   justify-content: center;
   gap: 0.5rem;
   align-items: center;
+  height: 100px;
+}
+
+footer > h3 {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 footer > img {
@@ -100,10 +106,18 @@ form {
 
 input {
   width: 80%;
+  height: 30px;
+  padding: 0.5rem;
+  font-size: 18px;
 }
 
 select {
   width: 50%;
+  height: 40px;
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 label {
@@ -133,6 +147,7 @@ select {
 
 #submitBook:hover {
   background-color: hsl(0, 0%, 0%, 80%);
+  transition: 0.3s ease-in-out;
 }
 
 .form-block {
