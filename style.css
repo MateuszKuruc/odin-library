@@ -39,7 +39,7 @@ footer {
 }
 
 footer > h3 {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -52,7 +52,7 @@ footer > img {
   height: 40px;
   align-self: center;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 900;
   background-color: hsl(182, 25%, 50%);
   box-shadow: none;
@@ -78,7 +78,7 @@ button {
   flex-direction: column;
   width: 300px;
   height: 300px;
-  border: 1px solid black;
+  border: 2px solid black;
   gap: 0.25rem;
   border-radius: 15px;
   justify-content: space-around;
@@ -142,6 +142,7 @@ select {
   align-self: center;
   border-radius: 10px;
   font-size: 18px;
+  font-weight: bold;
   background-color: hsl(0, 0%, 0%);
   color: white;
 }
@@ -231,6 +232,7 @@ form > p {
 
 .delStyle {
   background-color: hsl(0, 0%, 0%);
+  font-size: 18px;
 }
 
 .delStyle:hover {
@@ -240,6 +242,7 @@ form > p {
 
 .read {
   background-color: hsl(120, 100%, 25%, 100%);
+  font-size: 18px;
 }
 
 .hidden {
