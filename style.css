@@ -61,10 +61,11 @@ footer > img {
 
 #login:hover {
   background-color: hsl(182, 25%, 50%, 80%);
+  transition: 0.3s ease-in-out;
 }
 
 button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 button {
@@ -197,6 +198,7 @@ form > p {
 
 .addBookBtn:hover {
   background-color: hsl(182, 25%, 50%, 80%);
+  transition: 0.3s ease-in-out;
 }
 
 .main {
@@ -224,6 +226,7 @@ form > p {
 
 .readStyle.read:hover {
   background-color: hsl(120, 100%, 25%, 75%);
+  transition: 0.3s ease-in-out;
 }
 
 .delStyle {
@@ -232,6 +235,7 @@ form > p {
 
 .delStyle:hover {
   background-color: hsl(0, 0%, 0%, 75%);
+  transition: 0.3s ease-in-out;
 }
 
 .read {
