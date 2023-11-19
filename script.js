@@ -36,16 +36,20 @@ document.addEventListener("click", function clickOutside(event) {
 // control user input and send it to object constructor
 
 submitBook.addEventListener("click", function addToLibrary(event) {
-  event.preventDefault();
-
-  titleData = document.querySelector("#title").value;
+  titleData = document.querySelector("#title");
   authorData = document.querySelector("#author").value;
   pagesData = document.querySelector("#pages").value;
   readData = document.querySelector("#read").value;
   singleBook = new Book(titleData, authorData, pagesData, readData);
-  if (singleBook.title === "") {
-    titleError.classList.remove("hidden");
-  }
+
+  titleData.addEventListener("input", (event) => {
+    if (titleData.validity.typeMismatch) {
+      titleData.setCustomValidity("Please enter a title (min 4 characters");
+    } else if (!titleData.validity.typeMismatch) {
+      titleData.setCustomValidity("");
+    }
+  });
+
   if (singleBook.author === "") {
     authorError.classList.remove("hidden");
   }
@@ -57,7 +61,7 @@ submitBook.addEventListener("click", function addToLibrary(event) {
     displayBook();
     formBlock.classList.add("hidden");
     document.querySelector("#myForm").reset();
-    titleError.classList.add("hidden");
+    // titleError.classList.add("hidden");
     authorError.classList.add("hidden");
     pagesError.classList.add("hidden");
   }
