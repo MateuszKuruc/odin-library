@@ -169,6 +169,7 @@ select {
 
 form > h2 {
   align-self: center;
+  text-transform: uppercase;
 }
 
 form > p {
